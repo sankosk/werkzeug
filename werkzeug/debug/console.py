@@ -206,6 +206,6 @@ class Console(object):
         _local._current_ipy = self._ipy
         old_sys_stdout = sys.stdout
         try:
-            return self._ipy.runsource(code)
+            return escape(self._ipy.runsource(code))
         finally:
             sys.stdout = old_sys_stdout
